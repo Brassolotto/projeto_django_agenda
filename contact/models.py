@@ -13,6 +13,7 @@ class contact(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True)
     show = models.BooleanField(default=True)
+    picture = models.ImageField(upload_to='pictures/%Y/%m', blank=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
